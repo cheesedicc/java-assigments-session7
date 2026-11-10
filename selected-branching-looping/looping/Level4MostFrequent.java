@@ -1,0 +1,23 @@
+public class Level4MostFrequent {
+    public static void main(String[] args) {
+        int[] numbers = {4, 7, 2, 7, 4, 7, 9};
+        int mostFrequent = numbers[0];
+        int maxCount = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            int count = 0;
+            for (int j = 0; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j]) {
+                    count++;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                mostFrequent = numbers[i];
+            }
+        }
+
+        System.out.println("Most frequent = " + mostFrequent
+                + " (" + maxCount + " times)");
+    }
+}
